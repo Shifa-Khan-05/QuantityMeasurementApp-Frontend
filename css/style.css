@@ -1,0 +1,249 @@
+/* --- 1. Variables & Global Reset --- */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --accent: #10b981;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --white: #ffffff;
+    --gray-light: #f8fafc;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 2. Navbar --- */
+.glass-nav {
+    background: var(--white);
+    padding: 1rem 5%;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: 800; 
+    color: var(--primary); 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+/* --- 3. Auth Layout (Login & Signup) --- */
+.auth-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg-gradient);
+}
+
+.auth-card {
+    background: var(--white);
+    display: flex;
+    width: 100%;
+    max-width: 850px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+}
+
+.auth-left {
+    flex: 1;
+    background: var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.auth-left img { 
+    width: 140px; 
+    margin-bottom: 20px; 
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.auth-right { 
+    flex: 1; 
+    padding: 45px; 
+    background: var(--white);
+}
+
+/* --- 4. Forms & Tabs --- */
+.tabs { 
+    display: flex; 
+    gap: 25px; 
+    margin-bottom: 30px; 
+    border-bottom: 2px solid #f1f5f9; 
+}
+
+.tabs a, .tabs span { 
+    padding-bottom: 12px; 
+    text-decoration: none; 
+    color: #94a3b8; 
+    font-weight: 700; 
+    cursor: pointer; 
+    font-size: 0.9rem;
+}
+
+.tabs .active { 
+    color: var(--primary); 
+    border-bottom: 2px solid var(--primary); 
+}
+
+.form-group { margin-bottom: 20px; }
+
+label { 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    color: #475569; 
+    display: block; 
+    margin-bottom: 8px; 
+}
+
+input { 
+    width: 100%; 
+    padding: 12px 16px; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 10px; 
+    outline: none; 
+    transition: all 0.3s ease; 
+    font-size: 1rem;
+}
+
+input:focus { 
+    border-color: var(--primary); 
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); 
+}
+
+.error { 
+    color: #ef4444; 
+    font-size: 0.75rem; 
+    margin-top: 6px; 
+    display: block;
+    min-height: 15px; 
+    font-weight: 500;
+}
+
+.btn-primary {
+    width: 100%; 
+    padding: 14px; 
+    border: none; 
+    background: var(--primary);
+    color: white; 
+    font-weight: 700; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn-primary:hover { 
+    background: var(--primary-dark); 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* --- 5. Dashboard Styles --- */
+.main-layout { 
+    padding: 50px 5%; 
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.category-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 20px; 
+    margin-bottom: 40px; 
+}
+
+.category-card { 
+    background: var(--white); 
+    padding: 25px; 
+    border-radius: 18px; 
+    text-align: center; 
+    cursor: pointer; 
+    border: 2px solid transparent; 
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.category-card:hover { transform: translateY(-5px); }
+
+.category-card.active { 
+    border-color: var(--primary); 
+    background: #eef2ff; 
+    color: var(--primary);
+}
+
+.category-card i { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+
+.conversion-box { 
+    background: var(--white); 
+    padding: 45px; 
+    border-radius: 25px; 
+    box-shadow: var(--shadow); 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+}
+
+.field-box { 
+    flex: 1; 
+    background: #f1f5f9; 
+    padding: 20px; 
+    border-radius: 15px; 
+}
+
+.field-box input { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    border: none; 
+    background: transparent; 
+    padding: 10px 0;
+    color: var(--primary);
+}
+
+.field-box select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 10px;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #64748b;
+    outline: none;
+}
+
+/* --- 6. Responsive Queries --- */
+@media (max-width: 768px) {
+    .auth-left { display: none; }
+    .auth-card { max-width: 450px; }
+    .conversion-box { flex-direction: column; gap: 15px; }
+    .main-layout { padding: 25px 5%; }
+}
+
+

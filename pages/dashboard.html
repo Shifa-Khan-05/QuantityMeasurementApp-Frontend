@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quantity Measurement</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+   <header class="navbar">
+    <div class="nav-left">
+        <h2 class="logo">📏 Quantity Measurement</h2>
+    </div>
+
+    <div class="user-menu">
+        <span id="displayUserName">Welcome, User</span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+</header>
+
+    <main class="dashboard-container">
+        <div class="converter-card">
+            <h3 class="section-title">CHOOSE TYPE</h3>
+            
+            <div class="type-selector">
+                <div class="type-box active" data-type="length">
+        <!-- ruler / measurement -->
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" alt="Length">
+        <p>Length</p>
+    </div>
+                 <div class="type-box" data-type="temperature">
+        <!-- thermometer -->
+        <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="Temperature">
+        <p>Temperature</p>
+    </div>
+                <div class="type-box" data-type="volume">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3105/3105807.png" alt="Volume">
+                    <p>Volume</p>
+                </div>
+                <div class="type-box" data-type="weight">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjxjnGl3eTwJ0Tn8Y1M_bgea8P1YshU4ZXlg&s" alt="Weight">
+                    <p>Weight</p>
+                </div>
+            </div>
+
+            <div class="conversion-grid">
+                <div class="input-group">
+                    <label>FROM</label>
+                    <input type="number" id="fromValue" placeholder="0">
+                    <select id="fromUnit"></select>
+                </div>
+
+                <div class="swap-btn" id="swapBtn" title="Swap Units">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4M7 4L3 8M7 4L11 8M17 8v12M17 20l4-4M17 20l-4-4"/></svg>
+                </div>
+
+                <div class="input-group">
+                    <label>TO</label>
+                    <input type="number" id="toValue" placeholder="0" readonly>
+                    <select id="toUnit"></select>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/dashboard.js"></script>
+    <script>
+document.getElementById("swapBtn").addEventListener("click", function () {
+    
+    let from = document.getElementById("fromUnit");
+    let to = document.getElementById("toUnit");
+
+    // Swap values
+    let temp = from.value;
+    from.value = to.value;
+    to.value = temp;
+
+    // Optional: trigger conversion again
+    // convert();
+});
+</script>
+</body>
+</html>

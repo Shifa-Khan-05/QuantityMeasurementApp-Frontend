@@ -1,0 +1,235 @@
+:root {
+    --primary: #4c6ef5;
+    --accent: #20c997;
+    --bg: #f1f3f9;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logout-link {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid white;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-link:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* Container */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.converter-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 850px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Icon Grid */
+.type-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.type-box {
+    border: 2px solid #eee;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.type-box img { width: 40px; margin-bottom: 10px; opacity: 0.5; transition: 0.3s; }
+.type-box p { color: #999; font-weight: 600; }
+
+.type-box:hover { border-color: var(--primary); }
+
+.type-box.active {
+    border-color: var(--accent);
+    background: #f0fff4;
+}
+
+.type-box.active img { opacity: 1; }
+.type-box.active p { color: var(--accent); }
+
+/* Conversion Inputs */
+.conversion-grid {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    font-weight: bold;
+    outline: none;
+    color: #333;
+}
+
+.input-group select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+    color: #666;
+    outline: none;
+}
+
+.swap-btn {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--primary);
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg);
+    background: var(--primary);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .conversion-grid { flex-direction: column; }
+    .swap-btn { transform: rotate(90deg); }
+    .swap-btn:hover { transform: rotate(270deg); }
+}
+
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #4c6ef5, #20c997);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Username */
+#displayUserName {
+    font-size: 15px;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: white;
+    color: #4c6ef5;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.logout-btn:hover {
+    background: #f1f3f9;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .user-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+}
