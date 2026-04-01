@@ -1,0 +1,157 @@
+{
+  "info": {
+    "name": "Quantity Measurement App API",
+    "description": "API testing collection for the Quantity Measurement application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        },
+        "description": "Check if the backend is running and database is connected"
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"TestPassword123\",\n  \"mobile\": \"1234567890\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/register",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "register"]
+        },
+        "description": "Register a new user account"
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"TestPassword123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/login",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "login"]
+        },
+        "description": "Login with user credentials"
+      }
+    },
+    {
+      "name": "Convert Units",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{auth_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"value\": 1000,\n  \"unit\": \"gram\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/quantities/convert/kilogram",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "quantities", "convert", "kilogram"]
+        },
+        "description": "Convert 1000 grams to kilograms (requires authentication)"
+      }
+    },
+    {
+      "name": "Compare Quantities",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{auth_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"thisQuantityDTO\": {\n    \"value\": 1000,\n    \"unit\": \"gram\"\n  },\n  \"thatQuantityDTO\": {\n    \"value\": 1,\n    \"unit\": \"kilogram\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/quantities/compare",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "quantities", "compare"]
+        },
+        "description": "Compare if 1000 grams equals 1 kilogram (requires authentication)"
+      }
+    },
+    {
+      "name": "Add Quantities",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{auth_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"thisQuantityDTO\": {\n    \"value\": 500,\n    \"unit\": \"gram\"\n  },\n  \"thatQuantityDTO\": {\n    \"value\": 1,\n    \"unit\": \"kilogram\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/quantities/add",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "quantities", "add"]
+        },
+        "description": "Add 500 grams + 1 kilogram (requires authentication)"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "auth_token",
+      "value": "",
+      "type": "string",
+      "description": "JWT token obtained from login response"
+    }
+  ]
+}

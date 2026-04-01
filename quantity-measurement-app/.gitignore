@@ -1,0 +1,180 @@
+# ============================================
+# Dependencies and Modules
+# ============================================
+node_modules/
+/.pnp
+.pnp.js
+vendor/
+
+# ============================================
+# Build Outputs
+# ============================================
+dist/
+dist-ssr/
+/build
+*.tsbuildinfo
+out/
+.cache/
+
+# ============================================
+# Vite Cache
+# ============================================
+.vite/
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================
+# Environment Variables (NEVER COMMIT)
+# ============================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+secrets.json
+*.key
+*.pem
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+.vscode/*
+!.vscode/extensions.json
+.vscode-test
+.vscode-debug
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.history
+.vs/
+.vscode/
+*.iml
+*.sublime-project
+
+# ============================================
+# OS Generated Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ============================================
+# Vim, Nano, and Text Editor Files
+# ============================================
+*.swp
+*.swo
+*~
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+.nano_history
+
+# ============================================
+# Testing and Coverage
+# ============================================
+coverage/
+.nyc_output/
+test-results/
+junit.xml
+*.coverage
+.jest-cache/
+
+# ============================================
+# Local Files
+# ============================================
+*.local
+*.tmp
+*.temp
+tmp/
+
+# ============================================
+# Backup and Temporary Files
+# ============================================
+*.bak
+*.backup
+*~
+*.orig
+*.rej
+*,v
+
+# ============================================
+# Windows Specific
+# ============================================
+*.exe
+*.dll
+*.pdb
+*.so
+*.dylib
+*.o
+*.a
+
+# ============================================
+# Generated Files
+# ============================================
+out.txt
+.eslintcache
+.stylelintcache
+
+# ============================================
+# Custom Project Files
+# ============================================
+old_*/
+deprecated_*/
+*.bak.js
+*.bak.tsx
+
+# ============================================
+# Misc
+# ============================================
+.cache
+.next/
+storybook-static/
+bundle-report.html
+.devserver
+.gradle
+.npm
+
+# ============================================
+# Package Manager Lock Files (Keep These)
+# ============================================
+# Uncomment below if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# But it's recommended to keep them for consistency
+
+# ============================================
+# Git and Repository Files
+# ============================================
+.git/
+.gitkeep
+
+
+# ============================================
+# Documentation Build
+# ============================================
+site/
+docs/_build/
+storybook-static/
